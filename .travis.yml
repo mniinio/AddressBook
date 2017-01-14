@@ -14,3 +14,4 @@ deploy:
   run:
   - rake db:migrate
   - restart
+  app: the-addressbook
