@@ -6,6 +6,8 @@ script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
 - bundle exec rspec -fd spec/
+after_success:
+ - CI=true TRAVIS=true coveralls --verbose
 deploy:
   provider: heroku
   skip_cleanup: true

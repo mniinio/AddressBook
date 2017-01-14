@@ -19,6 +19,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'byebug', platform: :mri
   gem 'sqlite3'
+  gem 'coveralls', require: false
 end
 
 group :development do
