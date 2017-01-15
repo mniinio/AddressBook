@@ -24,3 +24,19 @@
 .alert-notice {
   @extend .alert-info;
 }
+
+#error_explanation {
+  @extend .alert;
+  @extend .alert-danger;
+  h2 {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  ul {
+    margin-top: 2em;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+}
