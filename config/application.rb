@@ -13,3 +13,7 @@ module Addressbook
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+Rails.application.configure do
+  config.exceptions_app = self.routes
+end

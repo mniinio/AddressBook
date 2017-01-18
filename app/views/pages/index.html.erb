@@ -1,0 +1,23 @@
+<h2 class="text-center"><% if user_signed_in? %>My <% end %>AddressBook</h2>
+<div class="col-md-6 col-md-offset-3">
+  <div class="account-wall">
+    <div class="account-form">
+      <% if user_signed_in? %>
+          <%= link_to('Add new address', new_address_path, class:"btn btn-primary btn-md") %>
+          <div class="list-group">
+            <% @addresses.each do |address| %>
+                <%= link_to address.name, address_path(address) %>
+            <% end %>
+          </div>
+      <% else %>
+          <div class="text-center">
+            <h1>Welcome!</h1>
+            <p>Register to get started.</p>
+            <p>
+              <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+            </p>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
