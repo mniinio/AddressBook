@@ -1,5 +1,13 @@
-<h1>New Address</h1>
+<h1 class="text-center">New Address</h1>
+<div class="col-md-6 col-md-offset-3">
+  <div class="account-wall">
+    <div class="account-form">
+      <%= render 'form', address: @address %>
 
-<%= render 'form', address: @address %>
+      <br><br>
+      <hr>
 
-<%= link_to 'Back', addresses_path %>
+      <%= link_to 'Back', addresses_path %>
+    </div>
+  </div>
+</div>

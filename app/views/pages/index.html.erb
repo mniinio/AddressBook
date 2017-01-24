@@ -3,12 +3,14 @@
   <div class="account-wall">
     <div class="account-form">
       <% if user_signed_in? %>
-          <%= link_to('Add new address', new_address_path, class:"btn btn-primary btn-md") %>
           <div class="list-group">
             <% @addresses.each do |address| %>
-                <%= link_to address.name, address_path(address) %>
+                <%= link_to address.name, address_path(address), :class=>"list-group-item" %>
             <% end %>
           </div>
+
+          <%= link_to('Add new address', new_address_path, class:"btn btn-default btn-sm") %>
+
       <% else %>
           <div class="text-center">
             <h1>Welcome!</h1>

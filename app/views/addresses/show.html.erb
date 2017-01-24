@@ -1,69 +1,115 @@
-<p id="notice"><%= notice %></p>
+<h1 class="text-center"><%= @address.name %></h1>
+<div class="col-md-6 col-md-offset-3">
+  <div class="account-wall">
+    <div class="account-form">
+      <p>
+        <% if @address.address1.present? && @address.zip_code.present? && @address.city.present? %>
+            <strong>Address:</strong>
+            <br>
+            <%= @address.address1 %>
+            <% if @address.address2.present? %>
+                <br>
+                <%= @address.address2 %>
+            <% end %>
+            <br>
+            <%= @address.zip_code %> <%= @address.city %>
+            <% if @address.state.present? %>
+                <br>
+                <%= @address.state %>
+            <% end %>
+            <% if @address.country.present? %>
+                <br>
+                <%= @address.country %>
+            <% end %>
+        <% else %>
+            <% if @address.address1.present? %>
+                <p>
+                  <strong>Address line 1:</strong>
+                  <%= @address.address1 %>
+                </p>
+            <% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @address.user %>
-</p>
+            <% if @address.address2.present? %>
+                <p>
+                  <strong>Address line 2:</strong>
+                  <%= @address.address2 %>
+                </p>
+            <% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @address.name %>
-</p>
+            <% if @address.zip_code.present? %>
+                <p>
+                  <strong>Zip code:</strong>
+                  <%= @address.zip_code %>
+                </p>
+            <% end %>
 
-<p>
-  <strong>Address1:</strong>
-  <%= @address.address1 %>
-</p>
+            <% if @address.city.present? %>
+                <p>
+                  <strong>City:</strong>
+                  <%= @address.city %>
+                </p>
+            <% end %>
 
-<p>
-  <strong>Address2:</strong>
-  <%= @address.address2 %>
-</p>
+            <% if @address.state.present? %>
+                <p>
+                  <strong>State:</strong>
+                  <%= @address.state %>
+                </p>
+            <% end %>
 
-<p>
-  <strong>Zip code:</strong>
-  <%= @address.zip_code %>
-</p>
+            <% if @address.country.present? %>
+                <p>
+                  <strong>Country:</strong>
+                  <%= @address.country %>
+                </p>
+            <% end %>
+        <% end %>
+        </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @address.city %>
-</p>
+        <% if @address.phone.present? %>
+            <p>
+              <strong>Phone number:</strong>
+              <%= @address.phone %>
+            </p>
+        <% end %>
 
-<p>
-  <strong>State:</strong>
-  <%= @address.state %>
-</p>
+        <% if @address.mobile.present? %>
+            <p>
+              <strong>Mobile phone number:</strong>
+              <%= @address.mobile %>
+            </p>
+        <% end %>
 
-<p>
-  <strong>Country:</strong>
-  <%= @address.country %>
-</p>
+        <% if @address.email.present? %>
+            <p>
+              <strong>Email:</strong>
+              <%= link_to @address.email, "mailto:" + @address.email %>
+            </p>
+        <% end %>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @address.phone %>
-</p>
+        <% if @address.website.present? %>
+            <p>
+              <strong>Website:</strong>
+              <%= link_to @address.website, @address.website %>
+            </p>
+        <% end %>
 
-<p>
-  <strong>Mobile:</strong>
-  <%= @address.mobile %>
-</p>
+        <% if @address.other.present? %>
+            <p>
+              <strong>Other:</strong>
+              <br>
+              <%= @address.other %>
+            </p>
+        <% end %>
 
-<p>
-  <strong>Email:</strong>
-  <%= @address.email %>
-</p>
+        <%= link_to('Edit', edit_address_path(@address), class:"btn btn-default" ) %>
+        <br><br>
+        <%= button_to "Delete address", address_path(@address), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
 
-<p>
-  <strong>Website:</strong>
-  <%= @address.website %>
-</p>
+        <br><br><br>
+        <hr>
 
-<p>
-  <strong>Other:</strong>
-  <%= @address.other %>
-</p>
-
-<%= link_to 'Edit', edit_address_path(@address) %> |
-<%= link_to 'Back', addresses_path %>
+        <%= link_to 'Back', root_path %>
+        </div>
+  </div>
+</div>

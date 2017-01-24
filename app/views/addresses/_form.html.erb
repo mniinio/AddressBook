@@ -11,72 +11,67 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+  <div class="form-group">
+    <%= f.label :name, class: "control-label" %>
+    <%= f.text_field :name, autofocus: true, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :address1, "Address line 1", class: "control-label" %>
+    <%= f.text_field :address1, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :address1 %>
-    <%= f.text_field :address1 %>
+  <div class="form-group">
+    <%= f.label :address2, "Address line 2 (if any)", class: "control-label" %>
+    <%= f.text_field :address2, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :address2 %>
-    <%= f.text_field :address2 %>
+  <div class="form-group">
+    <%= f.label :zip_code, class: "control-label" %>
+    <%= f.text_field :zip_code, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :zip_code %>
-    <%= f.text_field :zip_code %>
+  <div class="form-group">
+    <%= f.label :city, class: "control-label" %>
+    <%= f.text_field :city, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
+  <div class="form-group">
+    <%= f.label :state, class: "control-label" %>
+    <%= f.text_field :state, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :state %>
-    <%= f.text_field :state %>
+  <div class="form-group">
+    <%= f.label :country, class: "control-label" %>
+    <%= f.text_field :country, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :country %>
-    <%= f.text_field :country %>
+  <div class="form-group">
+    <%= f.label :phone, "Phone number",  class: "control-label" %>
+    <%= f.phone_field :phone, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
+  <div class="form-group">
+    <%= f.label :mobile, "Mobile phone number",  class: "control-label" %>
+    <%= f.text_field :mobile, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :mobile %>
-    <%= f.text_field :mobile %>
+  <div class="form-group">
+    <%= f.label :email, class: "control-label" %>
+    <%= f.email_field :email, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="form-group">
+    <%= f.label :website, class: "control-label" %>
+    <%= f.url_field :website, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :website %>
-    <%= f.text_field :website %>
-  </div>
-
-  <div class="field">
-    <%= f.label :other %>
-    <%= f.text_area :other %>
+  <div class="form-group">
+    <%= f.label :other, class: "control-label" %>
+    <%= f.text_area :other, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save Address", class: "btn btn-default" %>
   </div>
 <% end %>
