@@ -66,7 +66,7 @@ class AddressesController < ApplicationController
     if current_user && @address.user_id == current_user.id
       @address.destroy
       respond_to do |format|
-        format.html { redirect_to addresses_url, notice: 'Address was successfully destroyed.' }
+        format.html { redirect_to root_url, notice: 'Address was successfully destroyed.' }
         format.json { head :no_content }
       end
     end

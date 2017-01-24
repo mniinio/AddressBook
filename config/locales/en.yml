@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+      attributes:
+        address:
+          address1: 'Address line 1'
+          address2: 'Address line 2'
+          phone: 'Phone number'
+          mobile: 'Mobile phone number'
