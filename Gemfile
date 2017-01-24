@@ -23,6 +23,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'capybara'
   gem 'byebug', platform: :mri
   gem 'sqlite3'
 end

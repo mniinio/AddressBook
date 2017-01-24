@@ -1,5 +1,7 @@
 require 'simplecov'
 require 'coveralls'
+require 'capybara/rspec'
+
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(Array[
     Coveralls::SimpleCov::Formatter,
