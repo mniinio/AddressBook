@@ -12,7 +12,7 @@
 ###18.1.
 - 2h: Customized routing error pages, started views for the addresses
 
-###24.1.
+###23.1.
 - 2h: Address views to near finished
 - 1h: Address validations etc.
 - 1,5h: Exporting csv
