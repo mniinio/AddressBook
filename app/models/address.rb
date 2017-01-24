@@ -44,6 +44,6 @@ class Address < ApplicationRecord
     end
   end
 
-  scope :mine, -> (current_user) { where("user_id == ?", current_user)}
+  scope :mine, -> (current_user) { where("user_id = ?", current_user)}
 
 end
