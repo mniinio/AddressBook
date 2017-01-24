@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def index
     if current_user
-      @addresses = Address.all.mine(current_user.id)
+      @addresses = Address.all.mine(current_user.id).order('LOWER(name)')
       respond_to do |format|
         format.html
         format.csv { send_data @addresses.to_csv, filename: 'addresses.csv' }

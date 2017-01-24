@@ -39,7 +39,7 @@ class Address < ApplicationRecord
 
   def self.open_spreadsheet(file)
     case File.extname(file.original_filename)
-      when ".csv" then Roo::CSV.new(file.path, csv_options: {encoding: "iso-8859-1:utf-8"})
+      when ".csv" then Roo::CSV.new(file.path, csv_options: {encoding: "utf-8"})
       else raise "Unknown file type: #{file.original_filename}"
     end
   end

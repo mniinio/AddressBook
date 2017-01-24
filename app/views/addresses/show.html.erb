@@ -102,9 +102,20 @@
             </p>
         <% end %>
 
-        <%= link_to('Edit', edit_address_path(@address), class:"btn btn-default" ) %>
+
         <br><br>
-        <%= button_to "Delete address", address_path(@address), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+
+
+        <table>
+          <tr>
+            <td>
+              <%= link_to('Edit', edit_address_path(@address), class:"btn btn-default" ) %>
+            </td>
+            <td class="right">
+              <%= button_to "Delete address", address_path(@address), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+            </td>
+          </tr>
+        </table>
 
         <br><br><br>
         <hr>
