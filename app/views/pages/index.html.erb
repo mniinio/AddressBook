@@ -9,8 +9,13 @@
             <% end %>
           </div>
 
-          <%= link_to('Add new address', new_address_path, class:"btn btn-default btn-sm") %>
-
+          <table>
+            <tr>
+              <td><%= link_to('Add new address', new_address_path, class:"btn btn-default btn-sm") %></td>
+              <td></td>
+              <td><%= link_to('Export CSV', root_path(format: "csv"), class:"btn btn-default btn-xs") %></td>
+            </tr>
+          </table>
       <% else %>
           <div class="text-center">
             <h1>Welcome!</h1>
