@@ -9,11 +9,23 @@
             <% end %>
           </div>
 
+          <%= link_to('Add new address', new_address_path, class:"btn btn-default btn-sm") %>
+
+          <br><br><br>
+          <hr>
+
           <table>
             <tr>
-              <td><%= link_to('Add new address', new_address_path, class:"btn btn-default btn-sm") %></td>
-              <td></td>
-              <td><%= link_to('Export CSV', root_path(format: "csv"), class:"btn btn-default btn-xs") %></td>
+              <td>
+                <%= form_tag import_addresses_path, multipart: true do %>
+                    <%= file_field_tag :file %>
+                    <br>
+                    <%= submit_tag "Import CSV", class:"btn btn-default btn-sm" %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to('Export CSV', root_path(format: "csv"), class:"btn btn-default btn-sm") %>
+              </td>
             </tr>
           </table>
       <% else %>

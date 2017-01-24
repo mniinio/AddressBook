@@ -72,6 +72,16 @@ class AddressesController < ApplicationController
     end
   end
 
+  def import
+    result = Address.import(params[:file], current_user)
+    if result
+      redirect_to root_url, notice: "Products imported."
+    else
+      redirect_to root_url, :flash => { :error => 'Some of the values did not pass the validations. Check that the name attributes are present and unique.' }
+    end
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_address
