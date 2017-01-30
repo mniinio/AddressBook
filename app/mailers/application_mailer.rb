@@ -5,5 +5,7 @@ class ApplicationMailer < ActionMailer::Base.smtp_settings = {
   :domain         => 'https://enigmatic-bayou-52069.herokuapp.com/',
   :authentication => :plain,
 }
+  default from: 'from@example.com'
+  layout 'mailer
 ActionMailer::Base.delivery_method = :smtp
 end
