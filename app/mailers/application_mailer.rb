@@ -6,6 +6,6 @@ class ApplicationMailer < ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
 }
   default from: 'from@example.com'
-  layout 'mailer
+  layout 'mailer'
 ActionMailer::Base.delivery_method = :smtp
 end
