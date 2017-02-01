@@ -1,7 +1,7 @@
 sudo: required
 language: ruby
 rvm:
-- 2.4.0
+- 2.3.3
 script:
 - bundle exec rake db:migrate --trace
 - RAILS_ENV=test bundle exec rake db:migrate --trace
