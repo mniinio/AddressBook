@@ -1,3 +1,20 @@
+/* Custom Base colors for brand */
+
+$brand-primary: #f8b11e;
+$grey-base: #000;
+
+/* Custom Navigation styles */
+
+$navbar-inverse-bg: $brand-primary;
+$navbar-inverse-brand-color: $grey-base;
+$navbar-inverse-link-color: $grey-base;
+$navbar-inverse-link-hover-color: lighten($navbar-inverse-link-color, 6.5%);
+$navbar-inverse-border: none;
+$navbar-border-radius: 1;
+
+/* Custom form styles */
+$input-border-focus: $brand-primary;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap/theme';
@@ -16,7 +33,7 @@
  *= #require_tree .
  *= #require_self
  */
-
+ 	
 .alert-alert {
   @extend .alert-warning;
 }
