@@ -1,10 +1,20 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
 
+  # GET /addresses
+  def index
+    if current_user.superuser?
+      @addresses = Address.all
+    else
+      redirect_to errors_not_found_url
+    end
+  end
+
+
   # GET /addresses/1
   # GET /addresses/1.json
   def show
-    if !current_user || @address.user_id != current_user.id
+    if !current_user || @address.user_id != current_user.id || !current_user.superuser?
       redirect_to errors_not_found_url
     end
   end

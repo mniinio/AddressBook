@@ -1,0 +1,43 @@
+<h2 class="text-center"><% if user_signed_in? %>My <% end %>AddressBook</h2>
+<div class="col-md-6 col-md-offset-3">
+  <div class="account-wall">
+    <div class="account-form">
+      <% if user_signed_in? %>
+          <div class="list-group">
+            <% @addresses.each do |address| %>
+                <p>User <%= address.user_id %></p>
+                <%= link_to address.name, address_path(address), :class=>"list-group-item" %>
+            <% end %>
+          </div>
+
+          <%= link_to('Add new address', new_address_path, class:"btn btn-default btn-sm") %>
+
+          <br><br><br>
+          <hr>
+
+          <table>
+            <tr>
+              <td>
+                <%= form_tag import_addresses_path, multipart: true do %>
+                    <%= file_field_tag :file %>
+                    <br>
+                    <%= submit_tag "Import CSV", class:"btn btn-default btn-sm" %>
+                <% end %>
+              </td>
+              <td class="right">
+                <%= link_to('Export CSV', root_path(format: "csv"), class:"btn btn-default btn-sm") %>
+              </td>
+            </tr>
+          </table>
+      <% else %>
+          <div class="text-center">
+            <h1>Welcome!</h1>
+            <p>Register to get started.</p>
+            <p>
+              <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+            </p>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

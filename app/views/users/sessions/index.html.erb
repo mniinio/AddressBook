@@ -5,7 +5,9 @@
       <% if user_signed_in? %>
           <div class="list-group">
             <% @users.each do |user| %>
-                <%= link_to user.email, users_path(user), :class=>"list-group-item" %>
+                <% url = users_path(user) %>
+                <% puts url.split(".") %>
+                <%= link_to user.email, "users\/#{url.last}\/edit", :class=>"list-group-item" %>
             <% end %>
           </div>
 
