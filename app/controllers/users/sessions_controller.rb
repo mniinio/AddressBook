@@ -10,6 +10,19 @@ class Users::SessionsController < Devise::SessionsController
    end
   end
 
+  # GET /users/1/edit
+  def edit
+   @adminuser = current_user
+   @id = request.path_parameters[1]
+   if @adminuser.superuser?
+      @User = User.other(@id)
+   else 
+      redirect_to errors_not_found_url
+   end
+  end
+
+
+
   # GET /users/superuser
   # TODO: This is stupid of course, user can set themselves as superuser, but fast solution
   def superuser

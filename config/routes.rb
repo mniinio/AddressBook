@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'users', to: 'users/sessions#index'
     get 'users/superuser', to: 'users/sessions#superuser'
+    get 'users/:identifier/edit', to: 'users/sessions#edit'
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
