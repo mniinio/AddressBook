@@ -10,11 +10,12 @@ Rails.application.routes.draw do
     collection { post :import }
   end
 
-  scope '/admin' do
-    resources :users
-  end
+  devise_for :users, controllers: { sessions: 'users/sessions' }
 
-  devise_for :users
+  devise_scope :user do
+    get 'users', to: 'users/sessions#index'
+    get 'users/superuser', to: 'users/sessions#superuser'
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "pages#index"

@@ -1,0 +1,13 @@
+<h2 class="text-center"><% if user_signed_in? %>My <% end %>AddressBook</h2>
+<div class="col-md-6 col-md-offset-3">
+  <div class="account-wall">
+    <div class="account-form">
+          <div class="text-center">
+            <h1>You are upgraded to superuser!</h1>
+            <p>
+              <%= link_to 'View users', users_path, class: 'btn btn-primary btn-lg' %>
+            </p>
+          </div>
+    </div>
+  </div>
+</div>
