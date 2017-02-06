@@ -3,9 +3,6 @@ language: ruby
 rvm:
 - 2.3.3
 script:
-- bundle exec rake db:create test.sqlite3
-- bundle exec rake db:migrate RAILS_ENV=test --trace
-- bundle exec rake db:migrate:status
 - bundle exec rake db:test:prepare
 - bundle exec rspec -fd spec/
 deploy:
