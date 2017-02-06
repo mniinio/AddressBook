@@ -3,8 +3,6 @@ language: ruby
 rvm:
 - 2.3.3
 script:
-- bundle exec rake db:migrate --trace
-- rake db:migrate:status
 - bundle exec rake db:migrate RAILS_ENV=test --trace
 - rake db:migrate:status
 - bundle exec rake db:test:prepare
